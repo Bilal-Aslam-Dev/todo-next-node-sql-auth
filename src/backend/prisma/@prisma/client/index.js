@@ -132,7 +132,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "D:\\my files\\Git Data\\todo list\\src\\backend\\prisma\\@prisma\\client",
+      "value": "D:\\my files\\Git Data\\todo-google-signin\\src\\backend\\prisma\\@prisma\\client",
       "fromEnvVar": null
     },
     "config": {

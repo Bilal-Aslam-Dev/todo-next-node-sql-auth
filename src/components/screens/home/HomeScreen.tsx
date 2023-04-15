@@ -1,5 +1,5 @@
 import { type FC, useEffect } from 'react'
-import { signIn, signOut, useSession } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 
 import { useTodos } from '@/hooks/useTodo'
 
@@ -9,7 +9,7 @@ import AddTodo from './todo/AddTodo'
 import { ListIcon, Loader } from '@/assets/icons'
 
 const HomeScreen: FC = () => {
-  const {data: session ,status} = useSession()
+  const { data: session, status } = useSession()
 
   console.log(status, session)
 
@@ -23,13 +23,6 @@ const HomeScreen: FC = () => {
         <h1 className="text-center text-2xl underline-offset-1 underline font-semibold text-[#b787c7] select-none mb-10 mt-5">
           My Todos.
         </h1>
-        <button
-          onClick={async () => {
-            await signIn('google')
-          }}
-        >
-          Sign In
-        </button>
         <button
           onClick={async () => {
             await signOut()

@@ -24,6 +24,7 @@
     "react/jsx-no-bind": ["error", { "allowArrowFunctions": true }],
     "react/react-in-jsx-scope": "off",
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
-    "func-style": ["error", "expression"]
+    "func-style": ["error", "expression"],
+    "@typescript-eslint/no-misused-promises": "off"
   }
 }
