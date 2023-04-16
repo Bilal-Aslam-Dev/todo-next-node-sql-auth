@@ -21,6 +21,9 @@ module.exports = withMT({
       screens: {
         xs: '450px',
       },
+      fontFamily: {
+        pri: ['Poppins', 'sans-serif'],
+      },
     },
   },
   plugins: [],

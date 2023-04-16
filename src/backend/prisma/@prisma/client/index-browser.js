@@ -108,9 +108,17 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
+exports.Prisma.UserScalarFieldEnum = makeEnum({
+  id: 'id',
+  email: 'email',
+  password: 'password',
+  googleId: 'googleId'
+});
+
 
 exports.Prisma.ModelName = makeEnum({
-  todolist: 'todolist'
+  todolist: 'todolist',
+  User: 'User'
 });
 
 /**

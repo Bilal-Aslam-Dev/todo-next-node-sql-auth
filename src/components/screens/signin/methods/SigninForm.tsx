@@ -2,8 +2,9 @@ import type { FC } from 'react'
 
 import { CommonInput, PasswordInput, FormikWrapper } from '@/components/shared'
 import { loginSchema } from '@/utils/ValidationSchemas'
+import CustomButton from '@/components/shared/button/CustomButton'
 
-const LoginForm: FC = () => {
+const SignInForm: FC = () => {
   const handleSubmit = (values: any): any => {
     console.log(values)
   }
@@ -24,16 +25,15 @@ const LoginForm: FC = () => {
           <label htmlFor="password">Password</label>
           <PasswordInput inpName="password" errorName="password" />
         </div>
-
-        <button
-          className="mb-3 w-full py-1.5 mt-3 bg-blue-400 text-white rounded-md"
+        <CustomButton
+          className="mb-3 w-full py-3 text-sm capitalize font-medium tracking-wide hover:bg-blue-400 hover:bg-opacity-80 bg-blue-400 text-white rounded-lg mt-5"
           type="submit"
         >
-          Submit
-        </button>
+          Sign in
+        </CustomButton>
       </FormikWrapper>
     </>
   )
 }
 
-export default LoginForm
+export default SignInForm

@@ -4,6 +4,7 @@ import PasswordInput from './form/PasswordInput'
 import CustomCheckBox from './form/Checkbox'
 import Popup from './general/Popup'
 import ConfirmAction from './general/ConfirmAction'
+import SplashLoader from './general/SplashLoader'
 
 export {
   CommonInput,
@@ -12,4 +13,5 @@ export {
   CustomCheckBox,
   Popup,
   ConfirmAction,
+  SplashLoader,
 }
