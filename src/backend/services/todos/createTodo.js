@@ -6,8 +6,8 @@ export const createTodo = async (todo, _res) => {
     if (!todo) return _res.status(403).send('Did not receive a todo')
 
     const insert = await pool.query(
-      `INSERT INTO todolist (text, status, date) VALUES (?, ?, ?) `,
-      [todo.text, todo.status || 0, todo.date || new Date()]
+      `INSERT INTO todolist (text, status, userId, createdAt) VALUES (?, ?, ?, ?) `,
+      [todo.text, todo.status || 0, 2, todo.date || new Date()]
     )
     if (insert[0].affectedRows > 0) {
       const result = await pool.query(

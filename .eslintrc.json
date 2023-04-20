@@ -23,7 +23,8 @@
   "rules": {
     "react/jsx-no-bind": ["error", { "allowArrowFunctions": true }],
     "react/react-in-jsx-scope": "off",
-    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "no-trailing-spaces": "off",
+    "prettier/prettier": ["off", { "endOfLine": "auto" }],
     "func-style": ["error", "expression"],
     "@typescript-eslint/no-misused-promises": "off"
   }

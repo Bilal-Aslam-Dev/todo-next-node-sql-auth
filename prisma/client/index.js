@@ -80,8 +80,8 @@ const regularDirname = hasDirname && fs.existsSync(path.join(__dirname, 'schema.
 
 // if the client has been bundled, we need to look for the folders
 const foundDirname = !regularDirname && findSync(process.cwd(), [
-    "src\\backend\\prisma\\@prisma\\client",
-    "backend\\prisma\\@prisma\\client",
+    "prisma\\client",
+    "client",
 ], ['d'], ['d'], 1)[0]
 
 const dirname = regularDirname || foundDirname || __dirname
@@ -140,7 +140,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "D:\\my files\\Git Data\\todo-google-signin\\src\\backend\\prisma\\@prisma\\client",
+      "value": "D:\\my files\\Git Data\\todo-google-signin\\prisma\\client",
       "fromEnvVar": null
     },
     "config": {
@@ -151,10 +151,10 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "..\\..\\..\\..\\..\\.env",
-    "schemaEnvPath": "..\\..\\..\\..\\..\\.env"
+    "rootEnvPath": "..\\..\\.env",
+    "schemaEnvPath": "..\\..\\.env"
   },
-  "relativePath": "..\\..",
+  "relativePath": "..",
   "clientVersion": "4.12.0",
   "engineVersion": "659ef412370fa3b41cd7bf6e94587c1dfb7f67e7",
   "datasourceNames": [
@@ -182,6 +182,6 @@ exports.PrismaClient = PrismaClient
 Object.assign(exports, Prisma)
 
 path.join(__dirname, "query_engine-windows.dll.node");
-path.join(process.cwd(), "src\\backend\\prisma\\@prisma\\client\\query_engine-windows.dll.node")
+path.join(process.cwd(), "prisma\\client\\query_engine-windows.dll.node")
 path.join(__dirname, "schema.prisma");
-path.join(process.cwd(), "src\\backend\\prisma\\@prisma\\client\\schema.prisma")
+path.join(process.cwd(), "prisma\\client\\schema.prisma")

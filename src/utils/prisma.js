@@ -1,5 +1,11 @@
-import { PrismaClient } from '@/backend/prisma/@prisma/client'
+import { PrismaClient } from '../../node_modules/@prisma/client'
 
-const prisma = new PrismaClient()
+let prisma
+
+prisma =
+  global.prisma ||
+  (prisma = new PrismaClient({
+    log: ['query'],
+  }))
 
 export default prisma
