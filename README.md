@@ -2,8 +2,21 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+STEPS TO RUN THE PROJECT:
 
+1- Install the modules:
+``npm i ``
+
+2- Configure husky:
+``npm run prepare``
+
+2- Setup database:
+``npx prisma migrate dev --name "db-init"``
+
+3- Configure .env file
+`` Copy .env.example and create a .env file in root directory ``
+
+4- Run the development server:
 ```bash
 npm run dev
 # or
@@ -12,6 +25,18 @@ yarn dev
 pnpm dev
 ```
 
-## Instructions
+## Tools Confgiured
+1- Typescript
 
-import SQL database named "todolist.sql" from the root directory.
+2- Husky (lint-staged)
+
+3- Eslint/Prettier
+
+## Dependencies and Libraries
+4- TailwindCSS
+
+5- Formik (form handler)
+
+6- Yup (form validator)
+
+Check package.json for more information
