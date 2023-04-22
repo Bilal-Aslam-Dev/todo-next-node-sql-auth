@@ -8,6 +8,7 @@ import AddIcon from './add-icon.svg'
 import CloseIcon from './close-icon.svg'
 import TickIcon from './tick-icon.svg'
 import Loader from './loader.svg'
+import LogoutIcon from './logout.svg'
 
 export {
   EyeIcon,
@@ -20,4 +21,5 @@ export {
   CloseIcon,
   TickIcon,
   Loader,
+  LogoutIcon,
 }
