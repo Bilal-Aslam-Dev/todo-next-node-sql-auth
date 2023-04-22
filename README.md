@@ -13,7 +13,10 @@ STEPS TO RUN THE PROJECT:
 2- Setup database:
 ``npx prisma migrate dev --name "db-init"``
 
-3- Run the development server:
+3- Configure .env file
+`` Copy .env.example and create a .env file in root directory ``
+
+4- Run the development server:
 ```bash
 npm run dev
 # or
