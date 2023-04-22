@@ -1,5 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 
+import { useSession } from 'next-auth/react'
+
 import {
   getAllTodos as getAllTodosAction,
   deleteTodo as deleteTodoAction,
@@ -8,25 +10,27 @@ import {
 } from '@/store/actions/todo-actions'
 
 export const useTodos = () => {
-  const todos = useSelector(state => state.todos.todos ?? [])
-  const loading = useSelector(state => state.todos.loading)
-  const error = useSelector(state => state.todos.error)
+  const { data: session } = useSession()
+  const { userId } = session.user
+
+  const { todos, loading, error } = useSelector(state => state.todos)
+
   const dispatch = useDispatch()
 
   const fetchTodos = () => {
-    dispatch(getAllTodosAction())
+    dispatch(getAllTodosAction(userId))
   }
 
   const updateTodo = (id, todo) => {
-    dispatch(updateTodoAction({ id, todo }))
+    dispatch(updateTodoAction({ id, todo: { ...todo, userId } }))
   }
 
   const deleteTodo = id => {
-    return dispatch(deleteTodoAction(id))
+    dispatch(deleteTodoAction({ id, userId }))
   }
 
   const createTodo = newTodo => {
-    dispatch(createTodoAction(newTodo))
+    dispatch(createTodoAction({ ...newTodo, userId }))
   }
   return {
     todos,

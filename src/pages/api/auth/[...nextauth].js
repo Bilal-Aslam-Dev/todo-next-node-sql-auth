@@ -1,7 +1,7 @@
 import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 
-import sessionCallback from '@/backend/callbacks/next-auth/SessionCallback'
+import sessionCallback from '@/backend/callbacks/next-auth/sessionCallback'
 import signInCallback from '@/backend/callbacks/next-auth/signInCallback'
 
 const options = {
@@ -13,7 +13,7 @@ const options = {
   ],
   callbacks: {
     session: sessionCallback,
-    signIn: signInCallback
+    signIn: signInCallback,
   },
   database: process.env.DATABASE_URL,
 }

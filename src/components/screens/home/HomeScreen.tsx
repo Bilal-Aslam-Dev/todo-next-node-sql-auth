@@ -9,14 +9,18 @@ import AddTodo from './todo/AddTodo'
 import { ListIcon, Loader } from '@/assets/icons'
 
 const HomeScreen: FC = () => {
-  const { data: session, status } = useSession()
-
-  console.log(status, session)
-
+  const { data: session } = useSession()
   const { todos, loading, fetchTodos } = useTodos()
+
+  console.log(session)
+
   useEffect(() => {
-    fetchTodos()
-  }, [])
+    if ((session?.user) != null) {
+      fetchTodos()
+    }
+
+  }, [session?.user])
+
   return (
     <>
       <div className="home-gradient px-3 h-screen w-screen flex flex-col items-center">
@@ -39,13 +43,13 @@ const HomeScreen: FC = () => {
             )}
           </div>
           <div style={{ scrollbarWidth: 'thin' }} className="all-todos mt-7 ">
-            {todos.map((i: Record<string, number & string>) => {
+            {todos?.map((i: Record<string, number & string>) => {
               return (
                 <TodoItem
-                  status={i.status}
-                  text={i.text}
-                  key={String(i)}
-                  id={i.id}
+                  status={i?.status ?? 0}
+                  text={i?.text}
+                  key={i?.id}
+                  id={i?.id}
                 />
               )
             })}

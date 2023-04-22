@@ -4,9 +4,9 @@ import API from '@/utils/axios'
 
 export const getAllTodos = createAsyncThunk(
   'todos/getAllTodos',
-  async (_, { rejectWithValue }) => {
+  async (userId, { rejectWithValue }) => {
     try {
-      const response = await API.get('/api/todos')
+      const response = await API.get(`/api/todos/${userId}`)
       const todos = response.data
       return todos
     } catch (error) {

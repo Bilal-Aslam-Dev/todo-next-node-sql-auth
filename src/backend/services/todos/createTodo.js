@@ -1,25 +1,27 @@
-import pool from '../../config/dbconfig'
+import prisma from '@/utils/prisma'
 
 export const createTodo = async (todo, _res) => {
-  console.log(todo)
   try {
     if (!todo) return _res.status(403).send('Did not receive a todo')
 
-    const insert = await pool.query(
-      `INSERT INTO todolist (text, status, userId, createdAt) VALUES (?, ?, ?, ?) `,
-      [todo.text, todo.status || 0, 2, todo.date || new Date()]
-    )
-    if (insert[0].affectedRows > 0) {
-      const result = await pool.query(
-        `SELECT * FROM todolist WHERE text = ? ORDER BY id DESC LIMIT 1`,
-        [todo.text]
-      )
-      const newTodo = result[0]
+    const newTodo = await prisma.todolist.create({
+      data: {
+        text: todo.text,
+        user: {
+          connect: { id: todo.userId }
+        }
+      }
+    })
+
+    if (newTodo) {
       return _res.status(200).send(newTodo)
+
     } else {
       _res.status(500).send('Could not create a todo.')
+
     }
   } catch (error) {
     _res.status(500).send('Could not create a todo.')
+    
   }
 }

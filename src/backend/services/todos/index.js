@@ -1,10 +1,18 @@
-import pool from '@/backend/config/dbconfig'
+import prisma from '@/utils/prisma'
 
-export const getAllTodos = async _res => {
+export const getAllTodos = async (_req, _res) => {
+
   try {
-    const [rows] = await pool.query('SELECT * FROM todolist')
-    return _res.status(200).send(rows)
+    const res = await prisma.todolist.findMany({
+      where: {
+        userId: parseInt(_req.query.id),
+      },
+    })
+
+    return _res.status(200).send(res)
+
   } catch (error) {
     _res.status(500).send('Could not get data')
+
   }
 }

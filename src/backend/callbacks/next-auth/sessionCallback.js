@@ -8,8 +8,10 @@ export default async function sessionCallback({ session }) {
   })
 
   if (existingUser) {
-    session.userId = existingUser.id
-    
+
+    // Sets userId to the session including default session data
+    session.user = { user: { ...session.user }, userId: existingUser.id }
+
   } else {
     const newUser = await prisma.user.create({
       data: {
@@ -19,7 +21,9 @@ export default async function sessionCallback({ session }) {
       },
     })
 
-    session.userId = newUser.id
+    // Sets userId to the session including default session data
+    session.user = { user: { ...session.user }, userId: newUser.id }
+
   }
 
   return session
