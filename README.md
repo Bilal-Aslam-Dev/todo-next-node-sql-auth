@@ -12,13 +12,16 @@ Firstly, you need GOOGLE_CLIENT_SECRET and GOOGLE_CLIENT_ID in .env file to use 
 2- Configure husky:
 ``npm run prepare``
 
-2- Setup database:
+3- Start MySQL and Apache:
+``start MySQL and Apache service using XAMPP or any alternative tool``
+
+4- Setup database:
 ``npx prisma migrate dev --name "db-init"``
 
-3- Configure .env file
+5- Configure .env file
 `` Copy .env.example and create a .env file in root directory ``
 
-4- Run the development server:
+6- Run the development server:
 ```bash
 npm run dev
 # or
