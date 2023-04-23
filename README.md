@@ -4,6 +4,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 STEPS TO RUN THE PROJECT:
 
+Firstly, you need GOOGLE_CLIENT_SECRET and GOOGLE_CLIENT_ID in .env file to use Google Auth in the project. You can create yours at https://console.cloud.google.com/apis/credentials, create a new project if you don't have one and click on create credentials, it takes 2 minutes.
+
 1- Install the modules:
 ``npm i ``
 
@@ -24,19 +26,3 @@ yarn dev
 # or
 pnpm dev
 ```
-
-## Tools Confgiured
-1- Typescript
-
-2- Husky (lint-staged)
-
-3- Eslint/Prettier
-
-## Dependencies and Libraries
-4- TailwindCSS
-
-5- Formik (form handler)
-
-6- Yup (form validator)
-
-Check package.json for more information

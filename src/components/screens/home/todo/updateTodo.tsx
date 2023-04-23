@@ -60,7 +60,7 @@ const UpdateTodo: FC<UpdateTodoIF> = ({
             className="bg-[#99d8e1] hover:bg-cyan-300 transition-all py-3 mt-5 rounded-lg w-full text-white text-sm font-medium"
             type="submit"
           >
-            Add
+            Edit
           </button>
         </FormikWrapper>
       </Popup>
